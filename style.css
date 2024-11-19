@@ -1,0 +1,1047 @@
+
+*{
+    box-sizing: border-box;
+    font-family: "Roboto Slab", serif;
+    margin: 0;
+    padding: 0;
+    outline: none;
+    border: 0;
+    text-decoration: none;
+    text-transform: capitalize;  
+    transition: 0.2s linear;
+}
+::-webkit-scrollbar {
+    width: 8px; /* largura da barra de rolagem */
+  }
+  
+  /* Cor de fundo da barra de rolagem */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  /* Cor e arredondamento do indicador de rolagem */
+  ::-webkit-scrollbar-thumb {
+    background: #ffff;
+    border-radius: 50px;
+  }
+  
+  /* Cor do indicador ao passar o mouse */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #6a0dad;
+  }
+
+body{
+    background-color: #086845
+}
+
+header{
+    display: flex;
+     /* Torna a header fixa */
+    z-index: 2000; /* Certifica-se de que estará acima de outros elementos */
+    top: 0;
+    width: 100%;
+    height: 120px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.144);
+    justify-content: space-between;
+    overflow: hidden;
+    border-radius: 0px 0px 20px 20px;
+    align-items: center;
+    
+}
+
+
+.icone-usuario {
+    margin-left: -50px;
+    width: 10%;
+    left: -10%;
+    transition: transform 0.3s ease-in-out;
+}
+
+.icone-usuario:hover{
+    transform: scale(1.10);
+    
+}
+
+.icone-usuario a svg{
+    height: 40%;
+    width: 50px; 
+    
+}
+
+.escudo-item {
+    margin-left: -30px;
+    cursor: pointer;
+    width: 55%;
+    transition: transform 0.3s ease-in-out;
+    
+}
+
+.escudo-item:hover{
+    transform: scale(1.10);
+}
+
+
+ .escudo-item svg {
+    cursor: pointer;
+    height: 50px;
+    width: 60px;
+    
+} 
+
+.team-icon {
+    width: 30px;
+    height: 30px;
+    margin-right: 8px; /* Espaço entre o escudo e o nome */
+}
+
+
+.logo {
+   
+   padding-right: 500px;
+   width: 50%;
+   height: 200px;
+   display: flex;
+   outline: 0;
+   max-width: 100%; /* Evita transbordamento */
+   height: auto; /* Mantém a proporção */
+   transition: transform 0.2s ease-in-out;
+   cursor: pointer;
+   
+   
+}
+
+.logo:hover{
+    transform: scale(1.05);
+}
+
+.input-group{
+    position: relative;
+    left: 100px;
+    outline: none;
+}
+
+#search-input{
+    border-radius: 20px;
+    margin-left: -50%;
+    height: 50px;
+    padding: 20px;
+    outline: none;
+
+}
+
+.modal {
+    display: none; /* Inicialmente escondido */
+    position: fixed;
+    z-index: 1000; /* Ficar acima de tudo */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Fundo escurecido */
+    backdrop-filter: blur(5px); /* Desfoque da página principal */
+}
+
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+  }
+
+
+.dropdown {
+    position: absolute;
+    top: 80px;
+    background-color: white;
+    color: black;
+    display: none;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    width: 200px;
+    z-index: 3000;
+    padding-left: 5px;
+}
+
+
+
+
+
+.popup {
+    display: none; /* Oculto por padrão */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+.popup-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    width: 300px;
+    text-align: center;
+}
+.close-popup {
+    color: black;
+    float: right;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#user-container {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Espaçamento entre o texto e o ícone */
+    white-space: nowrap; /* Evita quebra de linha */
+}
+
+#user-container #loginMessage {
+    font-size: 20px; /* Ajuste o tamanho da fonte conforme necessário */
+    color: #FFFFFF; /* Ajuste a cor do texto conforme necessário */
+}
+
+.carousel-inner{
+    border-radius: 20px;
+    overflow: hidden; /* Garante que o conteúdo fique dentro das bordas arredondadas */
+    max-width: 1110px; /* Mantendo a largura ajustada */
+    margin: 40px auto; /* Centraliza o carrossel */
+    height: 400px;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.349);
+}
+
+
+.img-card {
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+  }
+
+.img-card:hover{
+    transform: scale(1.05);
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.349);
+}
+  
+  .u-text-placeholder {
+    background-color: #a2a8b1;
+    display: inline-block;
+    height: 9px;
+  }
+  
+  .l-cards {
+    display: grid;
+    grid-gap: 30px;
+    grid-template-columns: repeat(3, 300px);
+    grid-template-columns: repeat(auto-fit, 300px);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    justify-content: center;
+    justify-items: center;
+    padding: 30px;
+  }
+  
+  .c-card {
+    
+    border-radius: .6rem;
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+    width: 350px;
+    
+    &__image {
+      align-items: center;
+      background-color: #b5b9c1;
+      border-top-left-radius: .6rem;
+      border-top-right-radius: .6rem;
+      display: flex;
+      flex: 5;
+      justify-content: center;
+      overflow: hidden;
+      
+    }
+    
+    &__content {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      justify-content: space-around;
+      padding: 15px;
+      
+    }
+
+    
+}
+
+
+.c-card__content .card-title{
+    font-size: 90%;
+    display: grid;
+    grid-gap: 30px;
+    grid-template-columns: repeat(3, 300px);
+    grid-template-columns: repeat(auto-fit, 300px);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    justify-content: center;
+    justify-items: center;
+    margin-left: 5%;
+    transition: transform 0.3s ease-in-out;
+    color: #fff;
+   
+    
+}
+
+.c-card__content .card-title:hover{
+     transform: scale(1.05);
+     cursor: pointer;
+}
+
+.dashed-line {
+    border: none;
+    border-top: 2px dashed #fff;
+    width: 60%;
+    margin: 20px auto;
+}
+
+
+
+.melhores-momentos h1{
+    text-align: center;
+    padding: 30px;
+    color: #fff;
+    
+}
+
+.vacilos-semana h1{
+    padding: 30px;
+    color: #fff;
+}
+
+
+.video-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Espaçamento entre os vídeos */
+    flex-wrap: wrap; /* Para vídeos empilharem em telas menores */
+    padding: 30px;
+}
+
+.video-container iframe{
+    border-radius: 20px;
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.795);
+    transition: transform 0.3s ease-in-out;
+}
+
+.video-container iframe:hover{
+    transform: scale(1.05);
+}
+
+.dashed-line2 {
+    border: none;
+    border-top: 2px dashed #fff;
+    width: 60%;
+    margin: 20px auto;
+}
+
+
+.vacilos-semana{
+    padding: 30px;
+    color: #fff;
+    margin-top: 0%;
+}
+
+#agenda-jogos {
+    text-align: center; /* Centraliza o título */
+    padding: 20px; /* Espaçamento em volta da seção */
+    background-color: #086845; /* Cor de fundo para combinar com o tema */
+    color: white; /* Cor do texto */
+}
+
+.jogos-lista {
+    display: flex; /* Define layout em linha para os cards */
+    justify-content: center; /* Centraliza os cards */
+    gap: 20px; /* Espaçamento entre os cards */
+    margin-top: 20px; /* Espaçamento acima da lista */
+    flex-wrap: wrap; /* Permite que os cards quebrem linha em telas menores */
+}
+
+.jogo-card {
+    background-color: white; /* Fundo branco para destaque */
+    color: black; /* Cor do texto */
+    border-radius: 10px; /* Borda arredondada */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para destacar o card */
+    padding: 20px; /* Espaçamento interno */
+    text-align: center; /* Centraliza o conteúdo do card */
+    width: 200px; /* Largura fixa dos cards */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.4s ease, color 0.4s ease; /* Efeito suave de cor e transição */
+}
+
+/* Efeito de hover com cores suaves para Flamengo */
+.jogo-card.flamengo-vs-vasco:hover {
+    background-color: #e60000; /* Vermelho para o Flamengo */
+    color: #fff; /* Texto branco para melhorar a legibilidade */
+}
+
+/* Efeito de hover com cores suaves para Botafogo */
+.jogo-card.botafogo-vs-fluminense:hover {
+    background-color: #000000; /* Preto para o Botafogo */
+    color: #fff; /* Texto branco para melhorar a legibilidade */
+}
+
+/* Efeito de hover com cores suaves para Cruzeiro */
+.jogo-card.cruzeiro-vs-internacional:hover {
+    background-color: #005bac; /* Azul para Cruzeiro */
+    color: #fff; /* Texto branco para melhorar a legibilidade */
+}
+
+.jogo-card:hover {
+    transform: scale(1.05); /* Aumenta o tamanho do card */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra suave */
+    cursor: pointer;
+}
+
+/* Cores para os links e texto */
+.jogo-card p {
+    margin: 5px 0;
+}
+
+.jogo-card a {
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.jogo-card a:hover {
+    color: #fff; /* Cor para o link quando hover */
+}
+
+
+#evolucao-campeonato {
+    padding:20px;
+    background-color: #e9ecef;
+    text-align: center;
+}
+#grafico-evolucao {
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+
+
+
+
+
+.imagem-1{
+    display: block;
+}
+.imagem-11{
+    display: none;
+}
+.imagem-2{
+    display: block;
+}
+.imagem-22{
+    display: none;
+}
+.imagem-3{
+    display: block;
+}
+.imagem-33{
+    display: none;
+}
+
+
+
+
+
+
+
+
+/* inicio do footer*/
+
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    margin-top: 30px;
+}
+
+.footer .container-2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer .section-2 {
+    flex: 1;
+    margin: 10px;
+}
+
+.footer h3 {
+    border-bottom: 1px solid #777;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.footer p, .footer a {
+    color: #ccc;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color: #fff;
+}
+
+.footer .social a {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+/* FIM da footer*/
+
+
+
+
+/* //////////////////  Media Queries /////////////////////// */
+
+
+/* Para aparelhos SmartPhones */
+@media (min-width:320px){
+    header{
+        height: 100px;
+    }
+
+    .icone-usuario{
+        margin-left: 1%;
+        
+    }
+    .icone-usuario a svg{
+        height: 50%;
+        width: 30px;  
+    }
+    .escudo-item{
+        margin-left: 1%;
+    }
+    .escudo-item svg{
+        height: 50px;
+        width: 30px;
+        margin-left: 10px;
+    } 
+
+    .logo{
+        max-width: 100px;
+        height: 130px;
+        margin-right: -280px;
+    }
+
+    .input-group{
+        width: 100px;
+        height: none;
+       
+        left: 3px;
+        
+    }
+
+    #search-input{
+        margin-left: -160%;
+
+    }
+
+    .carousel-inner{
+        height: 310px;
+         
+    }
+
+    .carousel-inner h5{
+        height: 50px;
+    }
+    .carousel-inner p{
+        height: 100px;
+        font-size: 20px;
+    }
+
+    /* ------------img media querie ------------ */
+    .imagem-1{
+        display: none;
+    }
+    .imagem-11{
+        display: block;
+    }
+
+    .imagem-2{
+        display: none;
+    }
+    .imagem-22{
+        display: block;
+    }
+
+    .imagem-3{
+        display: none;
+    }
+    .imagem-33{
+        display: block;
+    }
+
+    .img-card1{
+        border-radius: 10px;
+        transition: transform 0.3s ease-in-out;
+        cursor: pointer;
+      }
+
+    .img-card1:hover{
+        transform: scale(1.05);
+        box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.349);
+    }
+
+    .card-title1{
+        font-size: 90%;
+        margin-left: 5%;
+        display: grid;
+        grid-gap: 30px;
+        grid-template-columns: repeat(3, 300px);
+        grid-template-columns: repeat(auto-fit, 300px);
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        justify-content: center;
+        justify-items: center;
+        transition: transform 0.3s ease-in-out;
+        color: #fff;
+    } 
+
+    .card-title1:hover{
+        transform: scale(1.05);
+        cursor: pointer;
+   }
+
+   .video-container{
+        display: flex;
+        justify-content: center;
+        gap: 20px; /* Espaçamento entre os vídeos */
+        flex-wrap: wrap; /* Para vídeos empilharem em telas menores */
+        padding: 30px;
+   }
+
+   #user-container #loginMessage {
+    font-size: 15px;
+    
+   }
+
+
+
+
+
+
+
+/* ------------Finish img pré-media querie ------------ */
+
+} 
+
+
+
+
+@media (min-width:480px){
+    header{
+        height: 100px;
+    }
+
+    .icone-usuario{
+        margin-left: 1%;
+        
+    }
+    .icone-usuario a svg{
+        height: 50%;
+        width: 30px;  
+    }
+    .escudo-item{
+        margin-left: 1%;
+    }
+    .escudo-item svg{
+        height: 50px;
+        width: 30px;
+        margin-left: 10px;
+    } 
+
+    .logo{
+        height: 130px;
+        margin-left: 20px;
+    }
+
+    .input-group{
+        width: 150px;
+        left: 10px;
+        
+    }
+
+    #search-input{
+        margin-left: 20%;
+        
+    }
+
+    .carousel-inner{
+        height: 320px;      
+    }
+
+    .carousel-inner h5{
+        height: 50px;
+    }
+    .carousel-inner p{
+        height: 100px;
+        font-size: 20px;
+    }
+
+    /* ------------img media querie ------------ */
+    .imagem-1{
+        display: none;
+    }
+    .imagem-11{
+        display: block;
+    }
+
+    .imagem-2{
+        display: none;
+    }
+    .imagem-22{
+        display: block;
+    }
+
+    .imagem-3{
+        display: none;
+    }
+    .imagem-33{
+        display: block;
+    }
+   
+
+}
+
+@media (max-width: 600px) {
+    .jogos-lista {
+        flex-direction: column; /* Cards em coluna em telas menores */
+        align-items: center; /* Centraliza os cards na coluna */
+    }
+}
+
+@media (min-width: 767px) {
+    header{
+        height: 100px;
+    }
+
+    .icone-usuario{
+        margin-left: 1%;
+        
+    }
+    .icone-usuario a svg{
+        height: 50%;
+        width: 30px;  
+    }
+    .escudo-item{
+        margin-left: 1%;
+    }
+    .escudo-item svg{
+        height: 50px;
+        width: 30px;
+        margin-left: 10px;
+    }
+    
+
+    .logo{
+        height: 150px;
+        margin-left: 10px;
+    }
+
+    .input-group{
+        width: 150px;
+        left: 10px;
+    }
+
+    #search-input{
+        margin-left: 20%;
+    }
+
+    .carousel-inner{
+        height: 600px;
+    }
+
+    .video-container {
+        display: flex;
+        justify-content: space-between; /* Espaço entre os vídeos */
+        gap: 20px; /* Espaçamento entre os vídeos */
+        flex-wrap: nowrap; /* Certifica que os vídeos não empilhem */
+        padding: 30px;
+    }
+
+    .video-container video {
+        max-width: calc(33% - 20px); /* Define o tamanho de cada vídeo para ocupar até um terço do container, considerando o gap */
+        height: auto; /* Para manter a proporção */
+    }
+    
+
+
+
+    /* ------------img media querie ------------ */
+    .imagem-1{
+        display: none;
+    }
+    .imagem-11{
+        display: block;
+    }
+
+    .imagem-2{
+        display: none;
+    }
+    .imagem-22{
+        display: block;
+    }
+
+    .imagem-3{
+        display: none;
+    }
+    .imagem-33{
+        display: block;
+    }
+
+/* ------------Finish img pré-media querie ------------ */
+#user-container #loginMessage {
+    font-size: 15px;
+    
+   }
+}
+
+
+
+
+/* Para Tablets */
+@media (min-width: 768px) and (max-width: 1023px) {
+
+    header{
+        height: 70px;
+    }
+  
+    .icone-usuario{
+        left: -9%;
+        
+    }
+
+    .icone-usuario a svg{
+        height: 50%;
+        width: 50px;
+        
+    }
+
+    .escudo-item{
+        left: -17%;
+    }
+
+    .escudo-item svg{
+        height: 50px;
+        width: 50px;
+    }
+
+    .logo {
+        width: 50%;
+        margin: 0 auto;
+        margin-left: 80px;
+        
+    }
+    
+    .input-group {
+        max-width: 700px; /* Limita a largura para telas menores */
+        width: 100%; /* Define 100% da largura do container pai */
+        height: none;
+        margin: 0 auto; /* Centraliza o grupo de input */
+    }
+    
+    #search-input {
+        width: 100px; /* Preenche todo o espaço da barra de pesquisa */
+        margin-left: -100px; /* Remove a margem negativa */
+    }
+
+    .carousel-inner{
+        width: 95%;
+        height: 610px;
+     
+      }
+     .carousel-inner h5{
+        height: 40px;
+    }
+    .carousel-inner p{
+        height: 50px;
+        font-size: 20px;
+    } 
+     
+
+    
+    .img-card1{
+        border-radius: 10px;
+        transition: transform 0.3s ease-in-out;
+        cursor: pointer;
+      }
+
+    .img-card1:hover{
+        transform: scale(1.05);
+        box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.349);
+    }
+
+    .card-title1{
+        font-size: 90%;
+        margin-left: 5%;
+        display: grid;
+        grid-gap: 30px;
+        grid-template-columns: repeat(3, 300px);
+        grid-template-columns: repeat(auto-fit, 300px);
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        justify-content: center;
+        justify-items: center;
+        transition: transform 0.3s ease-in-out;
+        color: #fff;
+    } 
+
+    .card-title1:hover{
+        transform: scale(1.05);
+        cursor: pointer;
+   }
+
+    .dashed-line2{
+       border-top: 2px solid #fff;
+       margin: 80px auto;
+    }
+    #user-container #loginMessage {
+        font-size: 20px;
+    }
+
+    
+
+   
+}
+
+
+
+ @media (min-width: 1025px) {
+
+    header {
+        height: 60px;
+        width: 100%;
+    }
+
+    .icone-usuario{
+        left: -0%;
+    }
+    .icone-usuario a svg{
+        height: 50%;
+        width: 50px; 
+        margin-left: 40px;
+    }
+    .escudo-item{
+        left: -10%;
+    }
+    .escudo-item svg{
+        height: 50px;
+        width: 50px;
+        margin-left: 30px;
+    }
+     .logo{
+        width: 10%;
+        height: 140px;
+        margin-right: 50px;
+        transition: transform 0.3s ease-in-out;
+        cursor: pointer;
+        
+    } 
+
+    .logo:hover{
+        transform: scale(1.05);
+    }
+   
+
+    .input-group{
+        width: 200px;
+        height: 50px;
+        left: 8px;
+    }
+    #search-input{
+        margin-left: -40%;
+        height: 30px;
+        margin-top: 3px;
+    }
+    .carousel-inner{
+       width: 1210px;
+       height: 600px;
+    
+    }
+    
+    .carousel-control-prev-icon {
+        padding: 20px;
+        margin-left: 210px;
+        
+    }
+    
+    .carousel-control-next-icon{
+        padding: 20px;
+        margin-right: 210px;
+    }
+    
+
+    
+
+ 
+
+    .carousel-inner h5{
+        height: 30px;
+    }
+    .carousel-inner p{
+        height: 310px;
+        font-size: 20px;
+    }
+
+    .c-card1{
+        display:  none;
+    }
+
+    .img-card1{
+        display: none; 
+    } 
+    
+    .card-title1{
+        display: none;
+    }
+
+    #user-container #loginMessage {
+        font-size: 20px;
+        
+       }
+       .video-container {
+        display: flex;
+        justify-content: space-between; /* Espaço entre os vídeos */
+        gap: 20px; /* Espaçamento entre os vídeos */
+        flex-wrap: nowrap; /* Certifica que os vídeos não empilhem */
+        padding: 60px;
+    }
+
+    .video-container video {
+        max-width: calc(30% - 20px); /* Define o tamanho de cada vídeo para ocupar até um terço do container, considerando o gap */
+        height: auto; /* Para manter a proporção */
+    }
+   
+
+    
+
+    
+
+} 

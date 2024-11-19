@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="cadastro.css">
+    <title>CaneleirosFC</title>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">
+            <a href="index.html"> <!-- Substitua 'index.html' pelo caminho correto da sua página inicial -->
+            <img src="imagens/img/4-removebg-preview.png" alt="logo">
+            </a>
+        </div>
+    </div>
+
+    <div class="cadastro-container">
+        <div class="register">
+            <!-- Link Voltar -->
+            <a href="login.html" class="botao-voltar">Voltar</a>
+            <form id="cadastroForm">
+                <h2 class="form-title">Criar Conta</h2>
+                <div class="form-fields">
+                    <input type="text" placeholder="Nome" maxlength="45" required class="input-half">
+                    <input type="date" placeholder="Data de Nascimento" required class="input-half">
+                    <input type="text" placeholder="CPF" required class="input-half">
+                    <input type="tel" placeholder="Número de Telefone (DDD)" required class="input-half">
+                    <input type="text" placeholder="Endereço" required class="input-large">
+                    <input type="text" placeholder="Login" maxlength="6" required class="input-half">
+                    <input type="password" placeholder="Senha" maxlength="8" required class="input-half">
+                    <input type="password" placeholder="confirmarSenha" maxlength="8" required class="input-half">
+                    
+
+                    <!-- Novo campo: Seleção de Time -->
+                    <!-- <label for="teamSelect">Escolha o seu time:</label> -->
+                    <select id="teamSelect" required class="input-full">
+                        <option value="" disabled selected>Selecione o seu time</option>
+                        <option value="Flamengo">Flamengo</option>
+                        <option value="Vasco">Vasco</option>
+                        <option value="Botafogo">Botafogo</option>
+                        <option value="Fluminense">Fluminense</option>
+                    </select>
+                </div>
+                <button type="submit" class="submit-button">Criar Conta</button>
+            </form>
+        </div>
+    </div>
+     
+    <script src="cadastro.js"></script>
+
+</body>
+</html>
