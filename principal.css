@@ -111,3 +111,21 @@ body {
     font-weight: bold;
     color: #fff; /* Ajuste a cor para combinar com o tema do time */
 }
+
+button {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Espaço entre o ícone e o texto */
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button i {
+    font-size: 25px; /* Tamanho do ícone */
+    color: white;
+}
