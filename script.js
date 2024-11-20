@@ -208,4 +208,75 @@ const grafico = new Chart(ctx, {
     },
 });
 
+// Recupera o time do usuário do sessionStorage
+const timeSelecionado = sessionStorage.getItem("timeSelecionado");
+
+if (!timeSelecionado) {
+    // Exibe uma mensagem amigável ao invés de redirecionar
+   
+    // Você pode adicionar uma opção para redirecionar para o cadastro ou deixar a pessoa seguir navegando
+} else {
+    carregarNoticias(timeSelecionado);
+}
+
+// Função para carregar as notícias do time selecionado
+function carregarNoticias(time) {
+    const noticias = obterNoticias(); // Essa função pode ser adaptada para usar uma API ou JSON com as notícias
+
+    // Filtra as notícias de acordo com o time selecionado
+    const noticiasFiltradas = noticias.filter(noticia => noticia.time === time);
+
+    // Exibe as notícias filtradas na página
+    exibirNoticias(noticiasFiltradas);
+}
+
+// Função para simular o retorno de notícias (pode ser substituída por uma API ou arquivo JSON)
+function obterNoticias() {
+    return [
+        { time: "Flamengo", titulo: "Flamengo vence o clássico", conteudo: "Conteúdo da notícia..." },
+        { time: "Vasco", titulo: "Vasco se prepara para a próxima partida", conteudo: "Conteúdo da notícia..." },
+        { time: "Botafogo", titulo: "Botafogo conquista mais 3 pontos", conteudo: "Conteúdo da notícia..." },
+        { time: "Fluminense", titulo: "Fluminense garante vitória fora de casa", conteudo: "Conteúdo da notícia..." },
+    ];
+}
+
+// Função para exibir as notícias na página
+function exibirNoticias(noticias) {
+    const container = document.getElementById("noticiasContainer");
+
+    // Limpa as notícias anteriores
+    container.innerHTML = "";
+
+    noticias.forEach(noticia => {
+        const noticiaElement = document.createElement("div");
+        noticiaElement.classList.add("noticia");
+
+        noticiaElement.innerHTML = `
+            <h2>${noticia.titulo}</h2>
+            <p>${noticia.conteudo}</p>
+        `;
+
+        container.appendChild(noticiaElement);
+    });
+}
+
+// document.addEventListener("DOMContentLoaded", function () {
+//     const usuarioCadastrado = JSON.parse(localStorage.getItem("usuario"));
+//     const noticiasLink = document.getElementById("noticiasLink");
+
+//     // Verifica se o usuário está logado
+//     if (usuarioCadastrado) {
+//         // Se o usuário estiver logado, exibe o botão de notícias
+//         noticiasLink.style.display = "block";
+//     } else {
+//         // Se não estiver logado, esconde o botão de notícias
+//         noticiasLink.style.display = "none";
+//     }
+
+//     console.log(localStorage.getItem("usuario"));
+// });
+
+
+
+
 

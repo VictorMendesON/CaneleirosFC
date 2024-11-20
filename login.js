@@ -16,23 +16,27 @@ function toggleForms() {
 }
 
 // Lógica para validar o formulário de login
+// Adiciona o ouvinte de evento para o formulário de login
 document.addEventListener('submit', function (event) {
     event.preventDefault();
 
     if (event.target.id === "loginForm") {
-        // Obter valores dos campos de login
-        const usuario = event.target.querySelector('input[placeholder="Usuário"]').value;
+        const login = event.target.querySelector('input[placeholder="Usuário"]').value;
         const senha = event.target.querySelector('input[placeholder="Senha"]').value;
 
-        // Obter o usuário cadastrado do Local Storage
-        const usuarioCadastrado = JSON.parse(localStorage.getItem("usuario"));
+        const usuario = JSON.parse(localStorage.getItem("usuario"));
 
-        // Validação de login
-        if (usuarioCadastrado && usuarioCadastrado.login === usuario && usuarioCadastrado.senha === senha) {
+        // Verifica se o usuário existe no localStorage e se a senha confere
+        if (usuario && usuario.login === login && usuario.senha === senha) {
+            // Armazena o time escolhido do usuário no sessionStorage ou localStorage
+            sessionStorage.setItem("timeSelecionado", usuario.time);
+
             alert("Login realizado com sucesso!");
-            window.location.href = "index.html"; // Redireciona para a página principal
+            window.location.href = "Index.html"; // Redireciona para a página principal
+
         } else {
-            alert("Usuário ou senha incorretos.");
+            alert("Login ou senha incorretos.");
         }
     }
 });
+
